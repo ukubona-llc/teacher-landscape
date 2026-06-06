@@ -16,10 +16,10 @@
       - Expensive
       - But we do have a pipeline for that too
       - Hypothesis: The journaling produces superior results 
-- [Compressor Matrix](https://ukubona-llc.github.io/bias-weights/): Reality `L₀+Σwᵢ·Lᵢ`
+- [Compressor Matrix](https://ukubona-llc.github.io/bias-weights/): Todays Reality `L₀+Σwᵢ·Lᵢ`
    - FastAPI
 - Vector: Error `f(σ²,λ,ε)` 
-- Eigenmode: `γ|ε_FGT|²`
+- Eigenmode: Weight Update `γ|ε_FGT|²`
    - SlowAPI 
       - LLM API predict tomorrow 
 - Scalar: Tomorrow `L(θᵗ⁺¹)`
