@@ -1080,9 +1080,9 @@ This is arguably the most important part of the entire system. Everything else d
 
 The uploaded document currently treats
 
-[
+$$
 L_0 + \sum w_i L_i
-]
+$$
 
 as a conceptual compressor.
 
@@ -1116,11 +1116,9 @@ That requirement eliminates a huge amount of unnecessary complexity.
 
 The Scalar is simply:
 
-[
+$$
 \theta^t \rightarrow L_t \rightarrow \theta^{t+1}
-]
-
-\theta^t \rightarrow L_t \rightarrow \theta^{t+1}
+$$
 
 The public sees:
 
