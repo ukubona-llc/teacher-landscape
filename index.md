@@ -2868,5 +2868,29 @@ export default function GeoMap({ theme = 'dark' }) {
 This should be a course `T513.jsx`, which will be a demo to National Planning Authority or Ministry of Education
 
 # Ukubona
+The demo is T513/T514 — hardcoded data, no backend. The path to functioning pipelines has three sequential gates:
+
+**Gate 1: Stable identifiers (1–2 weeks)**
+
+The single biggest architectural debt in the current demo is name-based district matching. Before any real data flows, you need a canonical district UUID table — one source of truth that the GeoJSON, the FastAPI compressor, and the journal ledger all reference by the same key. Political names change; UUIDs don't. This is a one-time migration but it unblocks everything downstream.
+
+**Gate 2: Append-only ledger (2–4 weeks)**
+
+The `main.py` in the session log has the right shape but uses in-memory lists. The production version is a Supabase Postgres table with a single policy: INSERT only, no UPDATE, no DELETE. RLS scopes teachers to their own district. JWT via national ID / MTN OTP. This is your `State_t = Σ Event_i` invariant enforced at the database layer, not application layer. GitHub PAT can bridge the gap while Supabase is being provisioned — same NDJSON pattern you already use in twin-os.
+
+**Gate 3: FastAPI compressor endpoints (2–3 weeks parallel with Gate 2)**
+
+Two endpoints are the minimum viable pipeline:
+
+```
+POST /api/v1/journal/append   ← teacher check-ins
+GET  /api/v1/scalar/landscape ← district vacancy scalars
+```
+
+The compressor reads the ledger, applies `L₀ + Σwᵢ·Lᵢ`, and returns the choropleth data T514 already knows how to render. The map stays identical — you just swap the hardcoded `DISTRICTS` array for a `useEffect` fetch.
+
+**The LLM eigenmode (SlowAPI) is Gate 4** — runs nightly, predicts tomorrow's deployment needs, feeds back into the scalar. That's the interesting research question (journaling vs biometrics) but it depends on having real tensor data from Gates 1–3 first.
+
+**Immediate next step:** do you want T515 as the functioning version of T514 — same map, same UI, but wired to a live `/scalar/landscape` endpoint with the Supabase ledger behind it? That's a concrete deliverable that demonstrates the full duck-swimming stack to NPA/MoE without waiting for the eigenmode.
 
 {% endraw %}
