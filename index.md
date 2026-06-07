@@ -1088,7 +1088,6 @@ as a conceptual compressor.
 
 I would make it explicit:
 
-L_t = L_0 + \sum_i w_i L_i
 
 where:
 
