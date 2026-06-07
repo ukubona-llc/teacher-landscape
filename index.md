@@ -1220,6 +1220,7 @@ Let's get your input first. Then discuss what to build, but for now preferably w
 
 - https://ukubona-grand-central.onrender.com/
 
+```md
 # DR. K'S SCHOOL — ARTEFACT CONTRACT
 subject: "Music" | "Statistics" | "Adaptation" | "Regulation" | "Technology"
 
