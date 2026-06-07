@@ -17,11 +17,6 @@
 <!-- Usage block:  $$\int_0^\infty e^{-x} dx = 1$$ -->
 
 
----
-layout: default
-title: "Ukubona LLC"
----
-
 {% raw %}
 
 # xAI
