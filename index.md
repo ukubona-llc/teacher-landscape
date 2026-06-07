@@ -507,7 +507,7 @@ The surface is tranquil, clean, and authoritative ("the duck swimming"). The hea
 * **Tensor ($\theta^t$):** Yesterday's state compiled from an immutable ledger of human observations.
 * **Compressor Matrix ($L_0 + \sum w_i \cdot L_i$):** Real-time aggregation of today's ground truth signals against base structural assumptions.
 * **Vector ($f(\sigma^2, \lambda, \epsilon)$):** Calculated variance, identification of anomalous check-ins, and local noise.
-* **Eigenmode ($\gamma |\epsilon_{FGT}|^2$):** Fast-adaptive weight tuning driven by predictive LLM historical matching via a background queue (SlowAPI).
+* **Eigenmode ($\gamma \|\epsilon_{FGT}\|^2$):** Fast-adaptive weight tuning driven by predictive LLM historical matching via a background queue (SlowAPI).
 * **Scalar ($L(\theta^{t+1})$):** The resulting Tomorrow Landscape—projected directly onto a high-fidelity choropleth map.
 
 ---
